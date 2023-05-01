@@ -141,21 +141,7 @@ protected:
 template <ByteOrder B> class BasicWriteStream : public Stream
 {
 public:
-    BasicWriteStream()
-    : Stream()
-    {}
-
-    BasicWriteStream(void* data, size_t size)
-    : Stream(data, size)
-    {}
-
-    BasicWriteStream(const BasicWriteStream& stream)
-    : Stream(stream)
-    {}
-
-    BasicWriteStream(const BasicWriteStream& stream, size_t size)
-    : Stream(stream, size)
-    {}
+    using Stream::Stream;
 
     // throw (OverflowError)
     inline void checkWritable(size_t n) const
